@@ -61,9 +61,9 @@ fi
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
 if [ $keybLayout = "be" ]; then
-  cp ~/.config/leftwm/config-azerty.toml ~/.config/leftwm/config.toml
+  cp ~/.config/leftwm/config-azerty.ron ~/.config/leftwm/config.ron
 else
-  cp ~/.config/leftwm/config-qwerty.toml ~/.config/leftwm/config.toml
+  cp ~/.config/leftwm/config-qwerty.ron ~/.config/leftwm/config.ron
 fi
 
 # keybindings daemon
@@ -114,8 +114,8 @@ if [ -x "$(command -v feh)" ]; then
   feh --bg-fill "$SCRIPTPATH"/nord-wallpaper.jpg
 fi
 
-#set the theme.toml config
-leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+#set the theme.ron config
+leftwm command "LoadTheme $SCRIPTPATH/theme.ron"
 
 #boot polybar based on the number of monitors found
 if [ -x "$(command -v polybar)" ]; then
